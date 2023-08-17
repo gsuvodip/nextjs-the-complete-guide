@@ -1,3 +1,6 @@
+import path from "path";
+import fs from "fs/promises";
+
 function HomePage(props) {
   const { products } = props;
 
@@ -7,18 +10,17 @@ function HomePage(props) {
         <li key={product.id}>{product.title}</li>
       ))}
     </ul>
-    // <ul>
-    //   <li>Product 1</li>
-    //   <li>Product 2</li>
-    //   <li>Product 3</li>
-    // </ul>
   );
 }
 
 export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
+  const jsonData = await fs.readFile(filePath);
+  const data = JSON.parse(jsonData);
+
   return {
     props: {
-      products: [{ id: "p1", title: "Product 1" }],
+      products: data.products,
     },
   };
 }
