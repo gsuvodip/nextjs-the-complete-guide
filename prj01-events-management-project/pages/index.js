@@ -16,6 +16,7 @@ export async function getStaticProps() {
     props: {
       events: featuredEvents,
     },
+    revalidate: 1800, // regenerated at production every 1800 seconds
   };
 }
 
