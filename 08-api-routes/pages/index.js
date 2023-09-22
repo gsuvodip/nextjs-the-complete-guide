@@ -26,7 +26,7 @@ function HomePage() {
       .then((data) => console.log(data));
   }
 
-  function loadFeedbackkHandler() {
+  function loadFeedbackHandler() {
     fetch("/api/feedback")
       .then((response) => response.json())
       .then((data) => {
@@ -49,7 +49,7 @@ function HomePage() {
         <button>Send Feedback</button>
       </form>
       <hr />
-      <button onClick={loadFeedbackkHandler}>Load Feedbacks</button>
+      <button onClick={loadFeedbackHandler}>Load Feedbacks</button>
       <ul>
         {feedbackItems.map((feedback) => (
           <li key={feedback.id}>{feedback.text}</li>
