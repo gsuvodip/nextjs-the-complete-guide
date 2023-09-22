@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "2023-09-22T11:11:23.723Z",
+    "email": "email1@test.com",
+    "text": "feedback1"
+  },
+  {
+    "id": "2023-09-22T11:11:56.715Z",
+    "email": "email2@test.com",
+    "text": "feedback2"
+  }
+]
